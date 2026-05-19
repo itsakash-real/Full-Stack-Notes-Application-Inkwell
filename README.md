@@ -15,9 +15,9 @@
 
 <br />
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-e8b86d?style=for-the-badge&logoColor=white)](https://notes-app-yourname.vercel.app)
-[![Backend API](https://img.shields.io/badge/Backend_API-Render-46E3B7?style=for-the-badge&logoColor=white)](https://notes-api-xxxx.onrender.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/itsakash-real/notes-app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-e8b86d?style=for-the-badge&logoColor=white)](https://frontend-ten-sigma-76.vercel.app)
+[![Backend API](https://img.shields.io/badge/Backend_API-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://backend-gamma-two-24.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/itsakash-real/Full-Stack-Notes-Application-Inkwell)
 
 <br />
 
@@ -67,10 +67,10 @@ The project follows industry-standard practices — MVC architecture on the back
 
 | Service | URL |
 |---|---|
-| **Frontend** | https://notes-app-yourname.vercel.app |
-| **Backend API** | https://notes-api-xxxx.onrender.com |
+| **Frontend** | https://frontend-ten-sigma-76.vercel.app |
+| **Backend API** | https://backend-gamma-two-24.vercel.app |
 
-> **Note:** The backend is hosted on Render's free tier. The first request after inactivity may take 30–60 seconds to wake the server. This is expected behaviour on the free plan.
+> **Note:** Both frontend and backend are hosted on Vercel. The backend runs as a serverless function — cold starts on the first request may take 2–3 seconds.
 
 **Test Account** *(feel free to use)*
 
@@ -146,8 +146,8 @@ Password: demo1234
 | Service | Purpose |
 |---|---|
 | MongoDB Atlas | Cloud-hosted database (M0 free tier) |
-| Render | Backend deployment (free web service) |
-| Vercel | Frontend deployment (hobby plan) |
+| Vercel | Backend deployment (serverless functions) |
+| Vercel | Frontend deployment (static CDN) |
 | GitHub | Version control and CI/CD trigger |
 
 ---
@@ -166,9 +166,9 @@ Password: demo1234
                          HTTPS + JWT Bearer Token
                                      │
                                      ▼
-                        ┌──────────────────────────┐
-                        │   Render (Backend)       │
-                        │   Node.js + Express      │
+                         ┌──────────────────────────┐
+                         │   Vercel (Backend)       │
+                         │   Serverless + Express   │
                         │                          │
                         │  ┌──────────────────┐   │
                         │  │  Middleware       │   │
@@ -231,7 +231,7 @@ Request → Routes → Middleware → Controller → Model → MongoDB
 
 ## 📡 API Reference
 
-**Base URL:** `https://notes-api-xxxx.onrender.com/api`
+**Base URL:** `https://backend-gamma-two-24.vercel.app/api`
 
 All protected routes require the header:
 ```
@@ -367,7 +367,6 @@ git --version    # any recent version
 
 You will also need:
 - A free [MongoDB Atlas](https://mongodb.com/atlas) account
-- A free [Render](https://render.com) account (for deployment)
 - A free [Vercel](https://vercel.com) account (for deployment)
 
 ---
@@ -377,8 +376,8 @@ You will also need:
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/itsakash-real/notes-app.git
-cd notes-app
+git clone https://github.com/itsakash-real/Full-Stack-Notes-Application-Inkwell.git
+cd Full-Stack-Notes-Application-Inkwell
 ```
 
 **2. Setup the Backend**
@@ -465,8 +464,8 @@ VITE_API_URL=http://localhost:8000/api
 ### Frontend — `frontend/.env.production`
 
 ```env
-# Replace with your actual Render backend URL
-VITE_API_URL=https://notes-api-xxxx.onrender.com/api
+# Deployed Vercel backend URL
+VITE_API_URL=https://backend-gamma-two-24.vercel.app/api
 ```
 
 > ⚠️ **Never commit `.env` files to Git.** All secret files are included in `.gitignore`. Add environment variables directly through your hosting provider's dashboard in production.
@@ -503,12 +502,15 @@ notes-app/
 │   │   ├── authRoutes.js             # /api/auth/*
 │   │   └── notesRoutes.js            # /api/notes/*
 │   │
+│   ├── api/
+│   │   └── index.js                  # Vercel serverless entry point
+│   │
 │   ├── .env                          # ← NOT committed to Git
 │   ├── .env.example                  # Template with placeholder values
 │   ├── .gitignore
 │   ├── package.json
-│   ├── Procfile                      # Render deployment config
-│   └── server.js                     # Express app entry point
+│   ├── vercel.json                   # Vercel routing config
+│   └── server.js                     # Express app entry point (local dev)
 │
 ├── frontend/                         # React + Vite SPA
 │   ├── public/
@@ -561,50 +563,45 @@ notes-app/
 
 ## ☁️ Deployment
 
-### Deploy Backend to Render
+Both frontend and backend are deployed on **Vercel** using the Vercel CLI.
 
-1. Push your code to GitHub
-2. Go to [render.com](https://render.com) → **New Web Service**
-3. Connect your GitHub repository
-4. Configure:
-   ```
-   Root Directory:  backend
-   Build Command:   npm install
-   Start Command:   node server.js
-   Instance Type:   Free
-   ```
-5. Add environment variables in the Render dashboard:
-   ```
-   NODE_ENV      production
-   PORT          8000
-   MONGO_URI     mongodb+srv://...
-   JWT_SECRET    your_secret_here
-   FRONTEND_URL  https://your-app.vercel.app
-   ```
-6. Deploy — your API will be live at `https://your-api.onrender.com`
+| Service | Live URL |
+|---|---|
+| **Frontend** | https://frontend-ten-sigma-76.vercel.app |
+| **Backend API** | https://backend-gamma-two-24.vercel.app |
+
+### Deploy Backend to Vercel
+
+```bash
+cd backend
+npx vercel --prod
+```
+
+Set these environment variables in the Vercel dashboard or via CLI:
+```
+MONGO_URI     mongodb+srv://...      # MongoDB Atlas URI
+JWT_SECRET    your_secret_here       # Long random string
+NODE_ENV      production
+FRONTEND_URL  https://frontend-ten-sigma-76.vercel.app
+```
 
 ### Deploy Frontend to Vercel
 
-1. Go to [vercel.com](https://vercel.com) → **New Project**
-2. Import your GitHub repository
-3. Configure:
-   ```
-   Framework:         Vite
-   Root Directory:    frontend
-   Build Command:     npm run build
-   Output Directory:  dist
-   ```
-4. Add environment variable:
-   ```
-   VITE_API_URL   https://your-api.onrender.com/api
-   ```
-5. Deploy — your app will be live at `https://your-app.vercel.app`
+```bash
+cd frontend
+npx vercel --prod
+```
+
+Set this environment variable:
+```
+VITE_API_URL  https://backend-gamma-two-24.vercel.app/api
+```
 
 ### MongoDB Atlas Setup
 
 1. Create free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
 2. **Database Access:** Create user with `Atlas Admin` role
-3. **Network Access:** Add `0.0.0.0/0` (allow from anywhere)
+3. **Network Access:** Add `0.0.0.0/0` (allow from anywhere — required for Vercel's dynamic IPs)
 4. **Connect:** Copy the connection string to your `MONGO_URI`
 
 ---
@@ -631,7 +628,7 @@ This project implements the following security measures:
 - JWT stored in localStorage (production should use HttpOnly cookies)
 - No rate limiting on auth endpoints (would add `express-rate-limit` in production)
 - No refresh token mechanism (access tokens expire and require re-login)
-- Free-tier backend has cold start delay after inactivity
+- Serverless cold starts may add ~1–2s latency on first request after inactivity
 
 ---
 
