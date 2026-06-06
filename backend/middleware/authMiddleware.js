@@ -1,58 +1,33 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const AppError = require("../utils/AppError");
+const env = require("../config/env");
 
-const protect = async (req, res, next) => {
-  let token;
-
-  // Step 1: Check if Authorization header exists and starts with "Bearer"
-  // The frontend sends: Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5..."
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer ")
-  ) {
-    // Step 2: Extract just the token part (remove "Bearer " prefix)
-    token = req.headers.authorization.split(" ")[1];
-  }
-
-  // Step 3: If no token found, reject the request immediately
-  if (!token) {
-    return res.status(401).json({
-      success: false,
-      message: "Access denied. No token provided. Please log in.",
-    });
-  }
-
+const protect = async (req, _res, next) => {
   try {
-    // Step 4: Verify the token using our secret key
-    // jwt.verify() does two things:
-    //   a) Checks if the token was signed with OUR secret (not fake)
-    //   b) Checks if the token hasn't expired
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    // decoded looks like: { id: "64abc123...", iat: 1234567890, exp: 1235567890 }
-
-    // Step 5: Find the user from the database using the ID inside the token
-    // We exclude the password field — never carry that around
-    req.user = await User.findById(decoded.id).select("-password");
-
-    if (!req.user) {
-      return res.status(401).json({
-        success: false,
-        message: "User belonging to this token no longer exists",
-      });
+    let token;
+    if (req.headers.authorization?.startsWith("Bearer ")) {
+      token = req.headers.authorization.split(" ")[1];
     }
 
-    // Step 6: Call next() to pass control to the actual route handler
-    // Without next(), the request would hang forever!
+    if (!token) {
+      return next(new AppError("Access denied. No token provided.", 401));
+    }
+
+    const decoded = jwt.verify(token, env.jwtSecret);
+    const user = await User.findById(decoded.id).select("-password");
+
+    if (!user) {
+      return next(new AppError("User belonging to this token no longer exists", 401));
+    }
+
+    req.user = user;
     next();
-  } catch (error) {
-    // jwt.verify() throws errors for:
-    //   - JsonWebTokenError → token is fake/malformed
-    //   - TokenExpiredError → token has expired
-    console.error("Token verification failed:", error.message);
-    return res.status(401).json({
-      success: false,
-      message: "Invalid or expired token. Please log in again.",
-    });
+  } catch (err) {
+    if (err.name === "JsonWebTokenError" || err.name === "TokenExpiredError") {
+      return next(new AppError("Invalid or expired token. Please log in again.", 401));
+    }
+    next(err);
   }
 };
 

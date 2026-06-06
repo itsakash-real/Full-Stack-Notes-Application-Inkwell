@@ -1,701 +1,657 @@
+# Inkwell
+
 <div align="center">
 
-<br />
+### A full-stack notes application built with the MERN stack
 
-```
-██╗███╗   ██╗██╗  ██╗██╗    ██╗███████╗██╗     ██╗
-██║████╗  ██║██║ ██╔╝██║    ██║██╔════╝██║     ██║
-██║██╔██╗ ██║█████╔╝ ██║ █╗ ██║█████╗  ██║     ██║
-██║██║╚██╗██║██╔═██╗ ██║███╗██║██╔══╝  ██║     ██║
-██║██║ ╚████║██║  ██╗╚███╔███╔╝███████╗███████╗███████╗
-╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝
-```
-
-### Where ideas find their home.
-
-<br />
-
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-e8b86d?style=for-the-badge&logoColor=white)](https://frontend-ten-sigma-76.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-5c5fef?style=for-the-badge)](https://frontend-ten-sigma-76.vercel.app)
 [![Backend API](https://img.shields.io/badge/Backend_API-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://backend-gamma-two-24.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/itsakash-real/Full-Stack-Notes-Application-Inkwell)
 
-<br />
-
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-
-<br />
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Express](https://img.shields.io/badge/Express-5-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-Auth-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite&logoColor=white)
 
 </div>
 
 ---
 
-## 📖 Table of Contents
+## Project Overview
 
-- [Overview](#-overview)
-- [Live Demo](#-live-demo)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [API Reference](#-api-reference)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Project Structure](#-project-structure)
-- [Deployment](#-deployment)
-- [Security](#-security)
-- [Interview Q&A](#-interview-qa)
-- [Author](#-author)
+Inkwell is a production-grade, full-stack notes application that lets users create, organize, and search personal notes with markdown support. It solves the common problem of scattered note-taking by providing a clean, fast interface with real-time search, tag organization, and the ability to pin important notes to the top.
+
+**Key benefits:**
+- Capture ideas instantly with markdown formatting and live preview
+- Find any note in seconds with real-time keyword search
+- Keep important notes visible with pinning
+- Access your notes from anywhere with cloud sync
+
+Built as a portfolio project to demonstrate professional full-stack engineering — from design system and state management to API design, security hardening, and deployment.
 
 ---
 
-## 🔍 Overview
-
-**Inkwell** is a production-grade, full-stack notes application built with the MERN stack. It supports secure user authentication using JSON Web Tokens, complete CRUD operations for notes, real-time keyword search, markdown formatting with live preview, and the ability to pin important notes to the top of your dashboard.
-
-The project follows industry-standard practices — MVC architecture on the backend, custom React hooks and Context API on the frontend, Axios interceptors for automatic token injection, and protected routes on both client and server.
-
-> Built as a portfolio project to demonstrate full-stack development skills across authentication, REST API design, database modelling, state management, and cloud deployment.
-
----
-
-## 🌐 Live Demo
+## Live Demo
 
 | Service | URL |
 |---|---|
-| **Frontend** | https://frontend-ten-sigma-76.vercel.app |
-| **Backend API** | https://backend-gamma-two-24.vercel.app |
+| Frontend | [https://frontend-ten-sigma-76.vercel.app](https://frontend-ten-sigma-76.vercel.app) |
+| Backend API | [https://backend-gamma-two-24.vercel.app](https://backend-gamma-two-24.vercel.app) |
 
-> **Note:** Both frontend and backend are hosted on Vercel. The backend runs as a serverless function — cold starts on the first request may take 2–3 seconds.
-
-**Test Account** *(feel free to use)*
-
-```
-Email:    demo@inkwell.app
-Password: demo1234
-```
+> **Test Account:** `demo@inkwell.app` / `Demo1234`
 
 ---
 
-## ✨ Features
+## Application Walkthrough Video
 
-### Authentication
-- ✅ User registration with full name, email, and password
-- ✅ Secure login with JWT token issuance (7-day expiry)
-- ✅ Password hashing with bcrypt (10 salt rounds)
-- ✅ Persistent sessions via localStorage
-- ✅ Auto-logout on token expiry with redirect to login
-- ✅ Protected routes on both client and server
+<!-- Replace with your actual demo video embed -->
+[![Inkwell Demo](https://img.shields.io/badge/Watch_Demo-Coming_Soon-5c5fef?style=for-the-badge)](https://youtube.com)
+
+---
+
+## Features
+
+### Authentication & Security
+- User registration with password strength validation
+- JWT-based authentication with 7-day token expiry
+- Password hashing with bcrypt (10 salt rounds)
+- Server-side input validation on all endpoints
+- Rate limiting on authentication routes
+- MongoDB operator injection protection
+- IDOR prevention — every mutation verifies ownership atomically
+- Security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options)
 
 ### Notes
-- ✅ Create, read, update, and delete notes
-- ✅ Markdown editor with live preview tab
-- ✅ Real-time search across title, content, and tags
-- ✅ Pin / unpin notes — pinned notes always appear first
-- ✅ Tag system with comma-separated input and live preview
-- ✅ Notes sorted by pin status then last updated
+- Full CRUD operations with optimistic UI updates
+- Markdown editor with inline preview tab
+- Real-time search across title, content, and tags
+- Pin/unpin — pinned notes always sort first
+- Tag system with comma-separated input and live tag preview
+- Word count tracking
 
 ### UI / UX
-- ✅ Custom dark "Writer's Den" design system — warm amber on charcoal
-- ✅ Responsive layout — works on mobile, tablet, and desktop
-- ✅ Skeleton loading states while notes fetch
-- ✅ Toast notifications for all user actions
-- ✅ Hover-reveal action buttons on note cards
-- ✅ Keyboard shortcut `⌘K` / `Ctrl+K` to create a new note
-- ✅ Empty states for no notes and no search results
-- ✅ Word count in note editor
-- ✅ Password strength meter on signup
+- Professional SaaS design system with custom color palette
+- Fully responsive — mobile, tablet, and desktop
+- Skeleton loading states during data fetch
+- Toast notifications for all user actions
+- Error states with retry capability
+- Empty states for new users and no search results
+- Keyboard shortcut `⌘K` / `Ctrl+K` to create a new note
+- Relative timestamps on note cards ("5m ago", "2d ago")
 
 ---
 
-## 🛠 Tech Stack
+## Architecture Overview
+
+### System Design
+
+```
+┌──────────────┐     HTTPS + JWT      ┌──────────────────┐     Mongoose      ┌──────────────┐
+│   Browser    │ ──────────────────▶ │  Express API      │ ──────────────▶  │ MongoDB Atlas │
+│  React SPA   │ ◀────────────────── │  (Vercel Serverless)│ ◀──────────────  │  (M0 Cluster) │
+└──────────────┘     JSON responses   └──────────────────┘                   └──────────────┘
+```
 
 ### Frontend
-
-| Technology | Version | Purpose |
-|---|---|---|
-| React | 18 | UI library |
-| Vite | 5 | Build tool and dev server |
-| Tailwind CSS | 3 | Utility-first styling |
-| React Router DOM | 6 | Client-side routing |
-| Axios | 1.x | HTTP client with interceptors |
-| React Markdown | 9 | Render markdown in note cards |
-| React Hot Toast | 2 | Toast notifications |
-| Lucide React | 0.383 | Icon library |
+- **React 19** with functional components and hooks
+- **Context API** for global auth state
+- **Custom hooks** for API-mediated data fetching
+- **Feature-based folder structure** — auth and notes are self-contained
+- **API abstraction layer** — components never touch Axios directly
+- **Code splitting** — routes load as separate chunks via `React.lazy`
+- **React.memo** and **useMemo** for render optimization
+- **Tailwind CSS 3** with a custom design system
 
 ### Backend
+- **Express 5** with MVC + Service Layer pattern
+- **Service layer** — business logic separated from controllers
+- **Validation middleware** — custom declarative validation engine
+- **Centralized error handling** — `AppError` class + catch-all middleware
+- **Async handler wrapper** — eliminates try/catch in controllers
+- **Dual entry points** — shared `app.js` for both local dev and Vercel serverless
 
-| Technology | Version | Purpose |
-|---|---|---|
-| Node.js | 18+ | JavaScript runtime |
-| Express.js | 4 | Web framework |
-| MongoDB | 7 | NoSQL database |
-| Mongoose | 7 | MongoDB ODM |
-| jsonwebtoken | 9 | JWT creation and verification |
-| bcryptjs | 2 | Password hashing |
-| cors | 2 | Cross-origin resource sharing |
-| dotenv | 16 | Environment variable management |
-| nodemon | 3 | Dev auto-restart |
+### Database
+- **MongoDB Atlas** — cloud-hosted NoSQL database
+- **Mongoose ODM** — schema validation, compound indexes, lean queries
+- **Optimized indexes** — compound index on `(userId, isPinned, updatedAt)` for listing queries, text index for search, email index for login lookups
 
-### Infrastructure
-
-| Service | Purpose |
-|---|---|
-| MongoDB Atlas | Cloud-hosted database (M0 free tier) |
-| Vercel | Backend deployment (serverless functions) |
-| Vercel | Frontend deployment (static CDN) |
-| GitHub | Version control and CI/CD trigger |
+### Authentication
+- **JWT** — stateless token authentication with configurable expiry
+- **bcryptjs** — salted password hashing (10 rounds)
+- **Password complexity** — minimum 8 characters with uppercase, lowercase, and digit required
+- **`select: false`** on password field — never returned in queries unless explicitly selected
+- **Atomic ownership checks** — `findOneAndUpdate({_id, userId})` combines auth + mutation in one query
 
 ---
 
-## 🏗 Architecture
+## Technology Stack
 
-### System Architecture
+| Layer | Technology | Purpose |
+|-------|-----------|--------|
+| **Frontend** | React 19 | UI library |
+| | Tailwind CSS 3 | Utility-first styling |
+| | Vite 8 | Build tool and dev server |
+| | React Router DOM 7 | Client-side routing with lazy loading |
+| | Axios 1.x | HTTP client with interceptors |
+| | React Markdown 10 | Markdown rendering in cards and preview |
+| | React Hot Toast 2 | Toast notifications |
+| | Lucide React 1.x | Icon library (tree-shaken) |
+| **Backend** | Node.js | JavaScript runtime |
+| | Express 5 | Web framework |
+| | Mongoose 9 | MongoDB ODM with schema validation |
+| | jsonwebtoken 9 | JWT signing and verification |
+| | bcryptjs 3 | Password hashing |
+| | dotenv 17 | Environment variable management |
+| **Database** | MongoDB Atlas | Cloud-hosted NoSQL (M0 free tier) |
+| **Deployment** | Vercel | Serverless backend + CDN frontend |
+
+---
+
+## Backend Architecture
+
+```mermaid
+graph TD
+    subgraph "Entry Points"
+        SERVER[server.js<br/>Local Dev] --> APP
+        VERCEL[api/index.js<br/>Vercel Serverless] --> APP
+    end
+
+    subgraph "App Setup"
+        APP[app.js] --> CORS[CORS Config]
+        APP --> SEC[Security Headers<br/>HSTS, CSP, X-Frame-Options]
+        APP --> RATE[Rate Limiter<br/>10 req/15min on auth]
+        APP --> JSON[JSON Parser<br/>10KB limit]
+        APP --> ROUTES
+    end
+
+    subgraph "Routes"
+        ROUTES --> AUTH_ROUTES[/api/auth]
+        ROUTES --> NOTES_ROUTES[/api/notes]
+    end
+
+    subgraph "Middleware Pipeline"
+        AUTH_ROUTES --> VALIDATE_AUTH[validate<br/>signup/login rules]
+        AUTH_ROUTES --> PROTECT[protect<br/>JWT verify]
+        VALIDATE_AUTH --> AUTH_CTRL
+        NOTES_ROUTES --> PROTECT
+        PROTECT --> VALIDATE_NOTES[validate<br/>note rules]
+        VALIDATE_NOTES --> NOTES_CTRL
+    end
+
+    subgraph "Service Layer"
+        AUTH_CTRL[authController] --> AUTH_SVC[authService<br/>signup / login / getUser]
+        NOTES_CTRL[notesController] --> NOTES_SVC[notesService<br/>CRUD / search / pin]
+    end
+
+    subgraph "Data Layer"
+        AUTH_SVC --> USER_MODEL[User Model]
+        NOTES_SVC --> NOTE_MODEL[Note Model]
+        USER_MODEL --> DB[(MongoDB Atlas)]
+        NOTE_MODEL --> DB
+    end
+
+    subgraph "Error Handling"
+        AUTH_CTRL --> ERR[errorMiddleware]
+        NOTES_CTRL --> ERR
+        AUTH_SVC --> ERR
+        NOTES_SVC --> ERR
+        ERR --> CLIENT[Consistent Error Response]
+    end
+```
+
+**Request lifecycle:**
+1. Request enters → CORS validation → Security headers added
+2. Auth routes: rate limiter → input validation → controller → service → model → DB
+3. Notes routes: JWT verification → input validation → controller → service → model → DB
+4. Service layer handles business logic and throws `AppError` for expected failures
+5. Error middleware catches all errors → returns consistent `{success: false, message}` response
+
+---
+
+## Folder Structure
 
 ```
-                        ┌──────────────────────────┐
-  Browser / Mobile      │   Vercel CDN (Frontend)  │
-  ─────────────────────▶│   React + Vite           │
-                        │   Global Edge Network     │
-                        └────────────┬─────────────┘
-                                     │
-                         HTTPS + JWT Bearer Token
-                                     │
-                                     ▼
-                         ┌──────────────────────────┐
-                         │   Vercel (Backend)       │
-                         │   Serverless + Express   │
-                        │                          │
-                        │  ┌──────────────────┐   │
-                        │  │  Middleware       │   │
-                        │  │  ├ CORS           │   │
-                        │  │  ├ JSON Parser    │   │
-                        │  │  └ Auth (JWT)     │   │
-                        │  └────────┬─────────┘   │
-                        │           │              │
-                        │  ┌────────▼─────────┐   │
-                        │  │  Controllers     │   │
-                        │  │  ├ authController│   │
-                        │  │  └ notesController│  │
-                        │  └────────┬─────────┘   │
-                        └───────────┼──────────────┘
-                                    │
-                              Mongoose ODM
-                                    │
-                                    ▼
-                        ┌──────────────────────────┐
-                        │   MongoDB Atlas          │
-                        │   Cloud Database         │
-                        │                          │
-                        │  Collections:            │
-                        │  ├── users               │
-                        │  └── notes               │
-                        └──────────────────────────┘
-```
-
-### Backend MVC Structure
-
-```
-Request → Routes → Middleware → Controller → Model → MongoDB
-                       │
-                   protect()
-                  (JWT verify)
-```
-
-### Authentication Flow
-
-```
-1. SIGNUP / LOGIN
-   Client ──POST credentials──▶ Express
-   Express ──bcrypt.compare()──▶ password check
-   Express ──jwt.sign(userId)──▶ generate token
-   Express ──token + user──────▶ Client
-   Client stores token in localStorage
-
-2. AUTHENTICATED REQUEST
-   Client ──request + "Bearer <token>"──▶ Express
-   protect middleware ──jwt.verify()────▶ validate token
-   protect middleware ──req.user = user─▶ attach user
-   Controller runs and returns data──────▶ Client
-
-3. TOKEN EXPIRY
-   Client request ──401 response──▶ Axios interceptor
-   Interceptor ──clear localStorage, redirect /login──▶ User
+notes-app/
+├── backend/
+│   ├── api/
+│   │   └── index.js                    # Vercel serverless entry
+│   ├── config/
+│   │   ├── db.js                       # MongoDB connection (timeouts, pool)
+│   │   └── env.js                      # Typed env access + validation
+│   ├── controllers/
+│   │   ├── authController.js           # Thin — delegates to authService
+│   │   └── notesController.js          # Thin — delegates to notesService
+│   ├── middleware/
+│   │   ├── asyncHandler.js             # Wraps async route handlers
+│   │   ├── authMiddleware.js           # JWT verification — protect()
+│   │   ├── errorMiddleware.js          # Centralized error handler
+│   │   ├── rateLimiter.js              # In-memory rate limiter
+│   │   └── validate.js                 # Declarative validation engine
+│   ├── models/
+│   │   ├── User.js                     # email, fullName, password (select: false)
+│   │   └── Note.js                     # title, content, tags, isPinned, userId
+│   ├── routes/
+│   │   ├── authRoutes.js               # /api/auth/* with validation
+│   │   └── notesRoutes.js              # /api/notes/* with validation
+│   ├── services/
+│   │   ├── authService.js              # Business logic — signup, login, getById
+│   │   └── notesService.js             # Business logic — CRUD, search, pin
+│   ├── utils/
+│   │   ├── AppError.js                 # Custom error with status code
+│   │   └── response.js                 # Consistent response formatter
+│   ├── validators/
+│   │   ├── auth.js                     # Signup/login validation rules
+│   │   └── notes.js                    # Note CRUD/search validation rules
+│   ├── app.js                          # Shared Express app
+│   ├── server.js                       # Local dev entry
+│   ├── .env.example
+│   ├── vercel.json
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── api/                        # API abstraction layer
+│   │   │   ├── client.js               # Axios instance + interceptors
+│   │   │   ├── auth.js                 # loginUser(), signupUser()
+│   │   │   └── notes.js                # fetchNotes(), createNote(), etc.
+│   │   ├── components/
+│   │   │   ├── layout/                 # Structural components
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── ProtectedRoute.jsx
+│   │   │   │   └── ScrollToTop.jsx
+│   │   │   └── ui/                     # Reusable presentational components
+│   │   │       ├── EmptyState.jsx
+│   │   │       ├── ErrorBanner.jsx
+│   │   │       ├── InputField.jsx
+│   │   │       ├── PageTransition.jsx
+│   │   │       └── SkeletonCard.jsx
+│   │   ├── features/                   # Feature-based modules
+│   │   │   ├── auth/
+│   │   │   │   ├── AuthContext.jsx
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Signup.jsx
+│   │   │   └── notes/
+│   │   │       ├── Dashboard.jsx
+│   │   │       ├── NoteCard.jsx
+│   │   │       ├── NoteModal.jsx
+│   │   │       ├── DeleteConfirmModal.jsx
+│   │   │       └── useNotes.js
+│   │   ├── hooks/
+│   │   │   └── useDebounce.js
+│   │   ├── App.jsx                     # Router + Suspense + Toaster
+│   │   ├── index.css                   # Design system + Tailwind
+│   │   └── main.jsx
+│   ├── .env.example
+│   ├── index.html
+│   ├── tailwind.config.js
+│   ├── vite.config.js                  # Code splitting config
+│   └── package.json
+│
+├── .gitignore
+├── package.json                        # Root — concurrently scripts
+└── README.md
 ```
 
 ---
 
-## 📡 API Reference
+## API Endpoints
 
-**Base URL:** `https://backend-gamma-two-24.vercel.app/api`
+**Base URL:** `https://backend-gamma-two-24.vercel.app/api`  
+**Local:** `http://localhost:8000/api`
 
-All protected routes require the header:
+All protected routes require:
 ```
 Authorization: Bearer <jwt_token>
 ```
 
-### Authentication Endpoints
+### Authentication
 
-| Method | Endpoint | Auth Required | Description |
-|---|---|---|---|
-| `POST` | `/auth/signup` | ❌ | Register a new user |
-| `POST` | `/auth/login` | ❌ | Login and receive JWT token |
-| `GET` | `/auth/me` | ✅ | Get current authenticated user |
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `POST` | `/auth/signup` | No | Register new user |
+| `POST` | `/auth/login` | No | Login, receive JWT |
+| `GET` | `/auth/me` | Yes | Get current user profile |
 
-#### POST `/auth/signup`
+### Notes
 
-```json
-// Request Body
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `GET` | `/notes` | Yes | List all notes (pinned first) |
+| `POST` | `/notes` | Yes | Create a note |
+| `GET` | `/notes/search?q=` | Yes | Search notes by keyword |
+| `GET` | `/notes/:id` | Yes | Get single note |
+| `PUT` | `/notes/:id` | Yes | Update a note |
+| `DELETE` | `/notes/:id` | Yes | Delete a note |
+| `PUT` | `/notes/:id/pin` | Yes | Toggle pin status |
+
+### Example Request — Create Note
+
+```http
+POST /api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+
 {
-  "fullName": "Akash Maurya",
-  "email": "akash@example.com",
-  "password": "mypassword123"
-}
-
-// Response 201
-{
-  "success": true,
-  "message": "Account created successfully",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": {
-    "id": "64abc123...",
-    "fullName": "Akash Maurya",
-    "email": "akash@example.com"
-  }
-}
-```
-
-#### POST `/auth/login`
-
-```json
-// Request Body
-{
-  "email": "akash@example.com",
-  "password": "mypassword123"
-}
-
-// Response 200
-{
-  "success": true,
-  "message": "Login successful",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": { "id": "...", "fullName": "...", "email": "..." }
+  "title": "Meeting Notes",
+  "content": "# Agenda\n\n- Review Q4 goals\n- Plan Q1 roadmap",
+  "tags": ["work", "meeting"]
 }
 ```
 
-### Notes Endpoints
-
-| Method | Endpoint | Auth Required | Description |
-|---|---|---|---|
-| `GET` | `/notes` | ✅ | Get all notes (pinned first) |
-| `POST` | `/notes` | ✅ | Create a new note |
-| `GET` | `/notes/:id` | ✅ | Get a single note |
-| `PUT` | `/notes/:id` | ✅ | Update a note |
-| `DELETE` | `/notes/:id` | ✅ | Delete a note |
-| `PUT` | `/notes/:id/pin` | ✅ | Toggle pin status |
-| `GET` | `/notes/search?q=` | ✅ | Search notes by keyword |
-
-#### POST `/notes`
+### Example Response — Create Note
 
 ```json
-// Request Body
-{
-  "title": "My Note Title",
-  "content": "# Heading\n\nContent with **markdown** support.",
-  "tags": ["work", "ideas"]
-}
-
-// Response 201
 {
   "success": true,
   "message": "Note created successfully",
   "note": {
-    "_id": "64abc...",
-    "userId": "64xyz...",
-    "title": "My Note Title",
-    "content": "# Heading\n\nContent with **markdown** support.",
-    "tags": ["work", "ideas"],
+    "_id": "674a1b2c3d4e5f6a7b8c9d0e",
+    "userId": "674a1b2c3d4e5f6a7b8c9d01",
+    "title": "Meeting Notes",
+    "content": "# Agenda\n\n- Review Q4 goals\n- Plan Q1 roadmap",
+    "tags": ["work", "meeting"],
     "isPinned": false,
-    "createdAt": "2025-01-15T10:00:00.000Z",
-    "updatedAt": "2025-01-15T10:00:00.000Z"
+    "createdAt": "2026-06-06T10:00:00.000Z",
+    "updatedAt": "2026-06-06T10:00:00.000Z"
   }
 }
 ```
 
-#### GET `/notes/search?q=keyword`
+### Example Request — Search
 
+```http
+GET /api/notes/search?q=meeting
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+```
+
+### Error Response Format
+
+All errors follow a consistent structure:
 ```json
-// Response 200
 {
-  "success": true,
-  "count": 2,
-  "query": "keyword",
-  "notes": [ ...matching notes ]
+  "success": false,
+  "message": "Human-readable error description"
 }
 ```
 
-### HTTP Status Codes Used
-
-| Code | Meaning | When |
-|---|---|---|
-| `200` | OK | Successful GET, PUT, DELETE |
-| `201` | Created | Successful POST |
-| `400` | Bad Request | Missing or invalid fields |
-| `401` | Unauthorized | No token / invalid token |
-| `403` | Forbidden | Valid token, wrong ownership |
-| `404` | Not Found | Resource doesn't exist |
-| `409` | Conflict | Email already registered |
-| `500` | Server Error | Unexpected server failure |
+| Code | Meaning |
+|------|---------|
+| `200` | OK |
+| `201` | Created |
+| `400` | Bad Request — validation failed |
+| `401` | Unauthorized — missing/invalid token |
+| `403` | Forbidden — not your resource |
+| `404` | Not Found |
+| `409` | Conflict — duplicate entry |
+| `429` | Too Many Requests — rate limited |
+| `500` | Internal Server Error |
 
 ---
 
-## 🚀 Getting Started
+## Authentication Flow
+
+### Signup
+1. Client sends `{fullName, email, password}` to `POST /api/auth/signup`
+2. Validation middleware checks field lengths, email format, password complexity (8+ chars, uppercase, lowercase, digit)
+3. `authService.signup()` checks for existing email → hashes password with bcrypt → creates user
+4. JWT generated with `{id: userId}` payload, signed with `JWT_SECRET`, expires in 7 days
+5. Response returns `{token, user: {id, fullName, email}}` — password never included
+
+### Login
+1. Client sends `{email, password}` to `POST /api/auth/login`
+2. Service looks up user by email, explicitly selects `+password` (hidden by default)
+3. bcrypt constant-time comparison — identical error for wrong email or wrong password
+4. JWT returned with user info
+
+### Authenticated Requests
+1. Axios interceptor reads token from localStorage, attaches `Authorization: Bearer <token>` header
+2. `protect()` middleware extracts token → `jwt.verify(token, JWT_SECRET)` → looks up user → attaches `req.user`
+3. All notes routes use `router.use(protect)` — every endpoint is guarded
+4. Notes mutations use `findOneAndUpdate({_id, userId})` — ownership check is atomic with the mutation
+5. On 401 response, Axios response interceptor clears localStorage and redirects to /login
+
+### Token Flow Diagram
+```
+SIGNUP / LOGIN                    AUTHENTICATED REQUEST
+───────────────                   ─────────────────────
+Client                              Client
+  │                                   │
+  │ POST credentials                  │ GET /api/notes
+  ▼                                   │ Authorization: Bearer <token>
+Express                               ▼
+  │                                 protect middleware
+  │ bcrypt.hash / .compare            │ jwt.verify(token, secret)
+  ▼                                   │ User.findById(decoded.id)
+MongoDB                               ▼
+  │                                 req.user = user
+  │ user created / found              │
+  ▼                                   ▼
+Express                             Controller
+  │ jwt.sign({id}, secret)            │ notesService.getAll(userId)
+  ▼                                   ▼
+Client                              MongoDB
+  │ {token, user}                     │ Note.find({userId})
+  ▼                                   ▼
+localStorage                        Client
+  setItem("token", token)             │ 200 {notes: [...]}
+                                      ▼
+                                    Render dashboard
+```
+
+---
+
+## Database Schema
+
+### User Collection
+
+| Field | Type | Constraints |
+|-------|------|-------------|
+| `_id` | ObjectId | Auto-generated |
+| `fullName` | String | Required, 2-50 chars, trimmed |
+| `email` | String | Required, unique, lowercase, validated format |
+| `password` | String | Required, 8+ chars, `select: false` (never returned in queries) |
+| `createdAt` | Date | Auto (timestamps) |
+| `updatedAt` | Date | Auto (timestamps) |
+
+**Index:** `{email: 1}` — optimizes login lookups
+
+### Note Collection
+
+| Field | Type | Constraints |
+|-------|------|-------------|
+| `_id` | ObjectId | Auto-generated |
+| `userId` | ObjectId (ref: User) | Required, indexed |
+| `title` | String | Required, max 150 chars, trimmed |
+| `content` | String | Required, max 100k chars |
+| `tags` | [String] | Max 10 items, lowercase |
+| `isPinned` | Boolean | Default `false` |
+| `createdAt` | Date | Auto (timestamps) |
+| `updatedAt` | Date | Auto (timestamps) |
+
+**Indexes:**
+- `{userId: 1}` — single-field (from schema)
+- `{userId: 1, isPinned: -1, updatedAt: -1}` — compound, covers main listing query
+- `{title: "text", content: "text"}` — text index for search
+
+---
+
+## Security Features
+
+| Category | Implementation |
+|----------|---------------|
+| **Authentication** | JWT signed with HS256, 7-day expiry, configurable via `JWT_EXPIRY` env var. `JWT_SECRET` must be ≥32 characters (validated at startup). |
+| **Password Storage** | bcryptjs with 10 salt rounds. Password field has `select: false` on the schema — never returned in responses unless explicitly selected. |
+| **Password Policy** | Minimum 8 characters. Must include uppercase, lowercase, and a digit. Enforced by both client-side validation and server-side validator middleware. |
+| **Rate Limiting** | In-memory rate limiter on all `/api/auth` routes — 10 requests per 15-minute window per IP. Configurable via `RATE_LIMIT_WINDOW` and `RATE_LIMIT_MAX` env vars. |
+| **IDOR Prevention** | Mutations use `findOneAndUpdate({_id, userId})` / `findOneAndDelete({_id, userId})` — ownership check and mutation are atomic. No separate check-then-act. List endpoints filter by `userId` at the query level. |
+| **Input Validation** | Declarative validation middleware runs before every controller. Validates types, lengths, patterns. Strips unknown fields. Rejects `$`-prefixed keys (MongoDB operator injection protection). |
+| **Query Sanitization** | Search queries have regex special characters escaped before `$regex`. Search results capped at 100 documents. |
+| **ObjectId Validation** | All `:id` route params validated as valid MongoDB ObjectIds before DB queries — prevents CastErrors and injection. |
+| **CORS** | Whitelist-based — only configured `FRONTEND_URL` and localhost dev origins. Strict methods and headers. |
+| **Security Headers** | `Strict-Transport-Security` (HSTS), `Content-Security-Policy`, `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy`. |
+| **Error Sanitization** | Operational errors return explicit messages via `AppError`. Unexpected errors return generic "Internal server error" in production. Stack traces only in development. |
+| **Payload Limit** | JSON body parser limited to 10KB. |
+| **Header Suppression** | `X-Powered-By` disabled. |
+| **Frontend** | Safe `JSON.parse` of localStorage with try/catch. Token validated (min length, type check) before attaching to requests. 401 interceptor skips redirect if already on login page. ReactMarkdown sanitizes HTML by default. |
+| **Environment** | All secrets in `.env`, gitignored. Required vars validated at startup with clear error messages. |
+
+---
+
+## Screenshots
+
+### Login Page
+<!-- Replace with actual screenshot -->
+![Login Page](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Login+Page+Screenshot)
+
+### Signup Page
+<!-- Replace with actual screenshot -->
+![Signup Page](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Signup+Page+Screenshot)
+
+### Dashboard with Notes
+<!-- Replace with actual screenshot -->
+![Dashboard](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Dashboard+Screenshot)
+
+### Create Note Modal
+<!-- Replace with actual screenshot -->
+![Create Note](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Create+Note+Screenshot)
+
+### Search Notes
+<!-- Replace with actual screenshot -->
+![Search Notes](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Search+Notes+Screenshot)
+
+### Edit Note with Preview
+<!-- Replace with actual screenshot -->
+![Edit Note](https://via.placeholder.com/800x500/f8f9fb/5c5fef?text=Edit+Note+Screenshot)
+
+---
+
+## Installation
 
 ### Prerequisites
 
-Make sure you have the following installed:
+- Node.js 18+ and npm 9+
+- MongoDB Atlas account (free tier works)
+- Git
 
-```bash
-node --version   # v18.0.0 or higher
-npm --version    # v9.0.0 or higher
-git --version    # any recent version
-```
-
-You will also need:
-- A free [MongoDB Atlas](https://mongodb.com/atlas) account
-- A free [Vercel](https://vercel.com) account (for deployment)
-
----
-
-### Installation
-
-**1. Clone the repository**
+### Step 1 — Clone
 
 ```bash
 git clone https://github.com/itsakash-real/Full-Stack-Notes-Application-Inkwell.git
 cd Full-Stack-Notes-Application-Inkwell
 ```
 
-**2. Setup the Backend**
+### Step 2 — Backend
 
 ```bash
 cd backend
 npm install
-```
-
-Create the environment file:
-
-```bash
 cp .env.example .env
 ```
 
-Open `.env` and fill in your values (see [Environment Variables](#-environment-variables) below).
-
-Start the backend development server:
-
-```bash
-npm run dev
-# Server running on http://localhost:8000
-```
-
-**3. Setup the Frontend**
-
-Open a new terminal:
-
-```bash
-cd frontend
-npm install
-```
-
-Create the environment file:
-
-```bash
-cp .env.example .env
-```
-
-Start the frontend development server:
-
-```bash
-npm run dev
-# App running on http://localhost:5173
-```
-
-**4. Run Both Simultaneously (Optional)**
-
-From the root `notes-app/` folder:
-
-```bash
-npm install        # installs concurrently
-npm run dev        # starts both frontend and backend
-```
-
----
-
-## 🔐 Environment Variables
-
-### Backend — `backend/.env`
-
+Edit `backend/.env`:
 ```env
-# Server
 PORT=8000
 NODE_ENV=development
-
-# Database — get from MongoDB Atlas
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/notesapp?retryWrites=true&w=majority
-
-# JWT — use a long, random string (minimum 32 characters)
-JWT_SECRET=your_super_secret_jwt_key_minimum_32_characters_long
-
-# Frontend URL — for CORS (update to Vercel URL in production)
+MONGO_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/inkwell?retryWrites=true&w=majority
+JWT_SECRET=<generate-with-node-crypto>
 FRONTEND_URL=http://localhost:5173
 ```
 
-### Frontend — `frontend/.env`
+Start the server:
+```bash
+npm run dev
+# → http://localhost:8000
+```
 
+### Step 3 — Frontend
+
+```bash
+cd ../frontend
+npm install
+cp .env.example .env
+```
+
+Edit `frontend/.env`:
 ```env
-# Backend API URL
 VITE_API_URL=http://localhost:8000/api
 ```
 
-### Frontend — `frontend/.env.production`
-
-```env
-# Deployed Vercel backend URL
-VITE_API_URL=https://backend-gamma-two-24.vercel.app/api
-```
-
-> ⚠️ **Never commit `.env` files to Git.** All secret files are included in `.gitignore`. Add environment variables directly through your hosting provider's dashboard in production.
-
-**Generate a secure JWT_SECRET:**
-
+Start the dev server:
 ```bash
-node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+npm run dev
+# → http://localhost:5173
+```
+
+### Step 4 — Run Both (Optional)
+
+From the project root:
+```bash
+npm install
+npm run dev
+# Starts backend + frontend concurrently
 ```
 
 ---
 
-## 📁 Project Structure
+## Deployment
 
-```
-notes-app/
-│
-├── backend/                          # Node.js + Express API
-│   ├── config/
-│   │   └── db.js                     # MongoDB connection with error handling
-│   │
-│   ├── controllers/                  # Business logic layer
-│   │   ├── authController.js         # signup, login, getUser
-│   │   └── notesController.js        # CRUD, search, pin toggle
-│   │
-│   ├── middleware/
-│   │   └── authMiddleware.js         # JWT verification — protect()
-│   │
-│   ├── models/                       # Mongoose schemas
-│   │   ├── User.js                   # email, fullName, password (hashed)
-│   │   └── Note.js                   # title, content, tags, isPinned, userId
-│   │
-│   ├── routes/                       # Express route definitions
-│   │   ├── authRoutes.js             # /api/auth/*
-│   │   └── notesRoutes.js            # /api/notes/*
-│   │
-│   ├── api/
-│   │   └── index.js                  # Vercel serverless entry point
-│   │
-│   ├── .env                          # ← NOT committed to Git
-│   ├── .env.example                  # Template with placeholder values
-│   ├── .gitignore
-│   ├── package.json
-│   ├── vercel.json                   # Vercel routing config
-│   └── server.js                     # Express app entry point (local dev)
-│
-├── frontend/                         # React + Vite SPA
-│   ├── public/
-│   │
-│   ├── src/
-│   │   ├── components/               # Reusable UI components
-│   │   │   ├── DeleteConfirmModal.jsx # Confirmation dialog before delete
-│   │   │   ├── EmptyState.jsx         # No notes / no search results states
-│   │   │   ├── InputField.jsx         # Reusable input with icon + error
-│   │   │   ├── Navbar.jsx             # Search bar + user menu + new note btn
-│   │   │   ├── NoteCard.jsx           # Note preview with hover actions
-│   │   │   ├── NoteModal.jsx          # Create/Edit modal with markdown editor
-│   │   │   ├── PageTransition.jsx     # Fade-in wrapper for pages
-│   │   │   ├── ProtectedRoute.jsx     # Auth guard — redirects to /login
-│   │   │   └── ScrollToTop.jsx        # Resets scroll on navigation
-│   │   │
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx        # Global auth state + login/logout
-│   │   │
-│   │   ├── hooks/
-│   │   │   └── useNotes.js            # All notes API logic in one hook
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Dashboard.jsx          # Main notes grid + modals
-│   │   │   ├── Login.jsx              # Split-screen login page
-│   │   │   └── Signup.jsx             # Split-screen signup + password strength
-│   │   │
-│   │   ├── utils/
-│   │   │   └── axiosInstance.js       # Pre-configured Axios + interceptors
-│   │   │
-│   │   ├── App.jsx                    # Router setup + Toaster
-│   │   ├── index.css                  # Design system + Tailwind + fonts
-│   │   └── main.jsx                   # React DOM entry point
-│   │
-│   ├── .env                           # ← NOT committed to Git
-│   ├── .env.example
-│   ├── .env.production                # Production API URL
-│   ├── .gitignore
-│   ├── index.html
-│   ├── package.json
-│   ├── tailwind.config.js             # Custom "Writer's Den" theme
-│   └── vite.config.js                 # Vite + code splitting config
-│
-├── .gitignore                         # Root-level ignore file
-├── package.json                       # Root — concurrently scripts
-└── README.md
-```
+### MongoDB Atlas
 
----
+1. Create a free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
+2. **Database Access** → Create user with read/write permissions
+3. **Network Access** → Add `0.0.0.0/0` (required for Vercel's dynamic IPs)
+4. Copy the connection string
 
-## ☁️ Deployment
-
-Both frontend and backend are deployed on **Vercel** using the Vercel CLI.
-
-| Service | Live URL |
-|---|---|
-| **Frontend** | https://frontend-ten-sigma-76.vercel.app |
-| **Backend API** | https://backend-gamma-two-24.vercel.app |
-
-### Deploy Backend to Vercel
+### Backend — Vercel
 
 ```bash
 cd backend
 npx vercel --prod
 ```
 
-Set these environment variables in the Vercel dashboard or via CLI:
-```
-MONGO_URI     mongodb+srv://...      # MongoDB Atlas URI
-JWT_SECRET    your_secret_here       # Long random string
-NODE_ENV      production
-FRONTEND_URL  https://frontend-ten-sigma-76.vercel.app
-```
+Environment variables in Vercel dashboard:
+| Variable | Value |
+|----------|-------|
+| `MONGO_URI` | Your Atlas connection string |
+| `JWT_SECRET` | Generated 64-char random string |
+| `NODE_ENV` | `production` |
+| `FRONTEND_URL` | Your Vercel frontend URL |
+| `RATE_LIMIT_MAX` | `10` |
+| `RATE_LIMIT_WINDOW` | `15` |
 
-### Deploy Frontend to Vercel
+### Frontend — Vercel
 
 ```bash
 cd frontend
 npx vercel --prod
 ```
 
-Set this environment variable:
-```
-VITE_API_URL  https://backend-gamma-two-24.vercel.app/api
-```
-
-### MongoDB Atlas Setup
-
-1. Create free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
-2. **Database Access:** Create user with `Atlas Admin` role
-3. **Network Access:** Add `0.0.0.0/0` (allow from anywhere — required for Vercel's dynamic IPs)
-4. **Connect:** Copy the connection string to your `MONGO_URI`
+Environment variable:
+| Variable | Value |
+|----------|-------|
+| `VITE_API_URL` | `https://your-backend.vercel.app/api` |
 
 ---
 
-## 🔒 Security
+## Future Improvements
 
-This project implements the following security measures:
-
-| Measure | Implementation |
-|---|---|
-| **Password Hashing** | bcryptjs with 10 salt rounds — passwords never stored in plain text |
-| **JWT Signing** | Tokens signed with HS256 algorithm using a secret key |
-| **Token Expiry** | JWT tokens expire after 7 days — limits damage if stolen |
-| **IDOR Prevention** | Every write operation verifies `note.userId === req.user._id` |
-| **CORS Restriction** | Backend only accepts requests from the configured frontend origin |
-| **Input Validation** | Schema-level and controller-level validation on all inputs |
-| **Environment Secrets** | All secrets in `.env` — never committed to version control |
-| **HTTP Headers** | Security headers added via custom middleware |
-| **Payload Limit** | JSON body limited to 10kb — prevents large payload attacks |
-| **Vague Auth Errors** | Login returns "Invalid email or password" — prevents user enumeration |
-
-### Known Limitations (Portfolio Project)
-
-- JWT stored in localStorage (production should use HttpOnly cookies)
-- No rate limiting on auth endpoints (would add `express-rate-limit` in production)
-- No refresh token mechanism (access tokens expire and require re-login)
-- Serverless cold starts may add ~1–2s latency on first request after inactivity
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Refresh token implementation
-- [ ] Note folders / collections
-- [ ] Rich text editor option (TipTap)
-- [ ] Note sharing via public link
-- [ ] Dark / light theme toggle
-- [ ] Export notes as PDF or Markdown file
-- [ ] Mobile app (React Native)
-- [ ] Collaborative notes (WebSockets)
-
----
-
-## 🎤 Interview Q&A
-
-A full set of **50 technical interview questions and answers** based on this project are documented separately.
-
-Topics covered:
-- JWT authentication flow
-- bcrypt password hashing
-- MongoDB schema design and indexing
-- React Context API and custom hooks
-- Axios interceptors
-- REST API conventions
-- MVC architecture
-- IDOR security vulnerability
-- Deployment and environment configuration
-- Scaling considerations
-
-> This project was built as part of a structured full-stack bootcamp. Every line of code was written with intent — not copied from templates.
-
----
-
-## 🧑‍💻 Author
-
-**Akash Maurya**
-*Computer Science Undergraduate — Lovely Professional University*
-
-[![GitHub](https://img.shields.io/badge/GitHub-itsakash--real-181717?style=flat-square&logo=github)](https://github.com/itsakash-real)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-akash--maurya--3160z-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/akash-maurya-3160z)
-[![Email](https://img.shields.io/badge/Email-akashmaurya3160@gmail.com-EA4335?style=flat-square&logo=gmail)](mailto:akashmaurya3160@gmail.com)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-```
-MIT License — Copyright (c) 2025 Akash Maurya
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files, to deal in
-the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or
-sell copies of the Software.
-```
+- **Refresh tokens** — add short-lived access tokens (15min) with long-lived refresh tokens stored in HttpOnly cookies
+- **Pagination** — add limit/offset to notes list for users with hundreds of notes
+- **Folders/Notebooks** — group notes into collections
+- **Dark/Light theme toggle** — persist preference in localStorage
+- **Note sharing** — generate shareable public links
+- **Export** — download notes as Markdown or PDF
+- **Rich text editor** — add a WYSIWYG option alongside markdown
+- **Offline support** — service worker for basic offline note creation
+- **Note version history** — track edits and allow rollback
+- **Collaborative editing** — real-time sync with WebSockets
 
 ---
 
 <div align="center">
 
-**Built with 🔥 and a lot of `console.log()` debugging**
+Built with ❤️ by **Akash Maurya**
 
-*If this project helped you learn — give it a ⭐ on GitHub*
+[GitHub](https://github.com/itsakash-real) · [LinkedIn](https://linkedin.com/in/akash-maurya-3160z) · [Email](mailto:akashmaurya3160@gmail.com)
 
 </div>
